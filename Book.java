@@ -11,6 +11,11 @@ public class Book {
     //The Library class will send all needed variables.
     //Remember that all instance variables MUST
     //have a value by the time the constructor finishes.
+
+    public Book(String title, String author) {
+        this(title, author, 34, "boring", false);
+    }
+
     public Book(String title, String author, int pages, String genre,
                 boolean inStock){
         this.title = title;
@@ -24,6 +29,16 @@ public class Book {
     public String getTitle(){
         return this.title;
     }
+
+    public void setInStock(boolean inStock) {
+        this.inStock = inStock;
+    }
+
+    public boolean isInStock() {
+        return inStock;
+    }
+
+
 
     //Write the isFantasy method that will return true if the Book
     // is fantasy
@@ -48,6 +63,12 @@ public class Book {
         }
          */
     }
+
+    /**
+     *
+     * @param book2
+     * @return boolean that is true if the books are the same and false otherwise
+     */
     public boolean equals(Book book2){
         if(this.title.equals(book2.title)
                 && this.author.equals(book2.author)
@@ -58,9 +79,29 @@ public class Book {
         } else {
             return false;
         }
-     }
+    }
 
-     public String toString(){
+    @Override
+    public boolean equals(Object o){
+        if(o instanceof Book) {
+            Book book2 = (Book) o;
+            if(this.title.equals(book2.title)
+                    && this.author.equals(book2.author)
+                    && this.pages == book2.pages
+                    && this.genre.equals(book2.genre)
+                    && this.inStock == book2.inStock) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+
+    @Override
+    public String toString(){
         return "Title: " + this.title + "\nAuthor: " + this.author + "\nPages: " + Integer.toString(this.pages) + " " + this.genre +
                 this.inStock;
      }
