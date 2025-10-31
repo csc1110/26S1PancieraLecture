@@ -100,11 +100,11 @@ public class Book {
     }
 
 
-    @Override
-    public String toString(){
-        return "Title: " + this.title + "\nAuthor: " + this.author + "\nPages: " + Integer.toString(this.pages) + " " + this.genre +
-                this.inStock;
-     }
+//    @Override
+//    public String toString(){
+//        return "Title: " + this.title + "\nAuthor: " + this.author + "\nPages: " + Integer.toString(this.pages) + " " + this.genre +
+//                this.inStock;
+//     }
 
 
 

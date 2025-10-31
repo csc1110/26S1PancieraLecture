@@ -11,7 +11,8 @@ public class Library {
         Scanner input = new Scanner(System.in);
 
 
-        Book csc = new Book("Introduction to Programming with Java",
+        Book csc;
+        csc = new Book("Introduction to Programming with Java",
                 "Dean and Dean", 1200, "education", true);
         Book csc3 = new Book("Introduction to Programming with Java",
                 "Dean and Dean", 1200, "education", true);

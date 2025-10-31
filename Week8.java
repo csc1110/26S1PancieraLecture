@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Week8 {
     public static void main(String[] args) {
         System.out.printf("Pi is equal to %.4f%n%n", Math.PI);
@@ -42,11 +44,7 @@ public class Week8 {
             System.out.printf("%.2f%n",testScores[i]);
         }
 
-        System.out.println(testScores.length);
-        System.out.println(quizScores.length);
-        String hi = "hello there person";
 
-        System.out.println(hi.length());
 
     }
 }
