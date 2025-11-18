@@ -1,6 +1,8 @@
+package panciera;
+
 public class Person {
-    private int age;
-    private String name;
+    protected int age;
+    protected String name;
 
     public Person(String name, int age){
         this.name = name;
@@ -17,5 +19,11 @@ public class Person {
 
     public String getName(){
         return this.name;
+    }
+
+    @Override
+    public String toString() {
+        return "age=" + age +
+                ", name='" + name;
     }
 }
