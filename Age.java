@@ -1,11 +1,8 @@
-package panciera;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Age {
     public static void main (String[] args) {
-//        Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 ////        ArrayList<String> names = new ArrayList<>();
 ////        names.add("mark");
 ////        names.add("amal");
@@ -14,19 +11,26 @@ public class Age {
 //
 //        System.out.println("How old are you?");
 //        setAge(input.nextInt());
-
-            try{
-                setAge(-25);
-                setAge(15);
-                setAge(5);
-            } catch (IllegalArgumentException e){
+        String again;
+        do {
+            System.out.println("What age?");
+            int age = input.nextInt();
+            input.nextLine();
+            try {
+                setAge(age);
+            } catch (IllegalArgumentException e) {
                 System.err.println("Error: " + e.getMessage());
             }
+            System.out.println("Do you want to enter another age?");
+            again = input.nextLine();
+        } while(again.toLowerCase().equals("y")||again.toLowerCase().equals("yes"));
     }
 
     public static void setAge(int age){
         if(age < 0){
             throw new IllegalArgumentException("Age cannot be negative");
+        } else if (age > 200) {
+            throw new IllegalArgumentException("Age doesn't seem real");
         }
         System.out.println("Age set to " + age);
     }
