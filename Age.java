@@ -26,7 +26,8 @@ public class Age {
         } while(again.toLowerCase().equals("y")||again.toLowerCase().equals("yes"));
     }
 
-    public static void setAge(int age){
+    public static void setAge(int age)
+        throws IllegalArgumentException {
         if(age < 0){
             throw new IllegalArgumentException("Age cannot be negative");
         } else if (age > 200) {
